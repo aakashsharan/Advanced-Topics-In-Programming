@@ -14,22 +14,28 @@ public class LLQueue<E> {
 		size = 0;
 	}
 	
-	/**
+	/** Inserts the specified element into the queue
 	 * @param element element to add.
 	 * @return boolean true if the element was added.
+	 * @throws NullPointerException if the element is null.
 	 */
 	public boolean add(E element){
-		LLNode<E> newOb = new LLNode<E>(element);
-		LLNode<E> prevNode = tail.prev;
 		
-		newOb.next = tail;
-		newOb.prev = prevNode;
-		prevNode.next = newOb;
-		tail.prev = newOb;
-		size++;
-		
-		return true;
-		
+		if(element == null){
+			throw new NullPointerException("element cannot be null");
+		}
+		else {
+			LLNode<E> newOb = new LLNode<E>(element);
+			LLNode<E> prevNode = tail.prev;
+			
+			newOb.next = tail;
+			newOb.prev = prevNode;
+			prevNode.next = newOb;
+			tail.prev = newOb;
+			size++;
+			
+			return true;
+		}
 	}
 	
 	/** Removes the head of the queue and return the value.
@@ -50,6 +56,7 @@ public class LLQueue<E> {
 			head.next = nextNode;
 			node.next = null;
 			node.prev = null;
+			size--;
 			
 			return data;
 		}
@@ -71,7 +78,7 @@ public class LLQueue<E> {
 			head.next = nextNode;
 			node.next = null;
 			node.prev = null;
-			
+			size--;
 			return data;
 		}
 	}
@@ -103,6 +110,10 @@ public class LLQueue<E> {
 			E data  = nodeHead.data;
 			return data;
 		}
+	}
+	
+	public int getSize(){
+		return size;
 	}
 	
 }
