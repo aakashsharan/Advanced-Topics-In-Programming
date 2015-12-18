@@ -76,4 +76,33 @@ public class LLQueue<E> {
 		}
 	}
 	
+	/** Retrieves but does not remove the head of the queue.
+	 * @return head of the queue.
+	 * @throws NoSuchElementException if the queue is empty.
+	 */
+	public E element(){
+		if(size == 0){
+			throw new NoSuchElementException("the queue is empty");
+		}
+		else {
+			LLNode<E> nodeHead = head.next;
+			E data  = nodeHead.data;
+			return data;
+		}
+	}
+	
+	/** Retrieves but does not remove the head of the queue.
+	 * @return null if queue is empty else return the head.
+	 */
+	public E peek(){
+		if(size == 0){
+			return null;
+		}
+		else{
+			LLNode<E> nodeHead = head.next;
+			E data  = nodeHead.data;
+			return data;
+		}
+	}
+	
 }
