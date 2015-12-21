@@ -59,7 +59,38 @@ public class LLStacks<E> {
 			tail.prev = finalNode;
 			
 			data = lastNode.data;
+			size--;
 			return data;
+		}
+	}
+	
+	/** Pushes an item onto the top of the stack.
+	 * @param item - the item to be pushed onto the stack.
+	 * @return - the item argument.
+	 * @throws NullPointerException if the item is null;
+	 */
+	public E push(E item){
+		LLNode<E> addNode = new LLNode<E>(item);
+		
+		if(item == null){
+			throw new NullPointerException("item cannot be null");
+		}
+		if(size == 0){
+			addNode.next = tail;
+			addNode.prev = head;
+			head.next = addNode;
+			tail.prev = addNode;
+			size++;
+			return item;
+		}
+		else{
+			LLNode<E> prevNode = tail.prev;
+			addNode.next = tail;
+			addNode.prev = prevNode;
+			prevNode.next = addNode;
+			tail.prev = addNode;
+			size++;
+			return item;
 		}
 	}
 	
