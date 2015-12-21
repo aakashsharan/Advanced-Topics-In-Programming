@@ -125,6 +125,9 @@ public class LLStacks<E> {
 		}
 	}
 	
+	/** Determines the size of the stack.
+	 * @return - size of the stack.
+	 */
 	public int size(){
 		return size;
 	}
