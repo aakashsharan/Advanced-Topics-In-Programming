@@ -125,5 +125,9 @@ public class LLStacks<E> {
 		}
 	}
 	
+	public int size(){
+		return size;
+	}
+	
 	
 }
