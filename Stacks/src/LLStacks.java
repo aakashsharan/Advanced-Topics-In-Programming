@@ -94,5 +94,36 @@ public class LLStacks<E> {
 		}
 	}
 	
+	/** Returns 1-based position where an object is on this stack.
+	 * @param o - the desired object.
+	 * @return - the 1-based position from the top of the stack where the object is located, 
+	 * 			 return -1 if the object is not on the stack.
+	 * @throws EmptyStackException - if the stack is empty.
+	 */
+	public int search(Object o){
+		if(size < 0 || size == 0){
+			throw new EmptyStackException();
+		}
+		else{
+			LLNode<E> currNode  = tail;
+			int foundAt = 0;
+			currNode = tail.prev;
+			
+			for(int i=0; i<size; i++){
+				if(currNode.data.equals(o)){
+					foundAt = i + 1;
+				}
+				currNode = currNode.prev;
+			}
+			if(foundAt != 0){
+				return foundAt;
+			}
+			else {
+				return -1;
+			}
+			
+		}
+	}
+	
 	
 }
