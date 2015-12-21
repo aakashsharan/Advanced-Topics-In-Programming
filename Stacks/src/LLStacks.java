@@ -31,7 +31,7 @@ public class LLStacks<E> {
 	 * @throws EmptyStackException if the stack is empty.
 	 */
 	public E peek(){
-		if(size == 0){
+		if(size == 0 || size < 0){
 			throw new EmptyStackException();
 		}
 		else{
@@ -48,7 +48,7 @@ public class LLStacks<E> {
 	 * @throws EmptyStackException if the stack is empty.
 	 */
 	public E pop(){
-		if(size == 0){
+		if(size == 0 || size < 0){
 			throw new EmptyStackException();
 		}
 		else{
