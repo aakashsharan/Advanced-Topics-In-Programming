@@ -1,5 +1,9 @@
 import java.util.DuplicateFormatFlagsException;
 
+/**
+ * @author Aakash
+ *
+ */
 public class BST {
 
 	private TreeNode root;
@@ -48,4 +52,35 @@ public class BST {
 			}
 		}
 	}
+	
+	
+	/**
+	 * @param key
+	 * @return
+	 */
+	public boolean lookUp(Comparable key){
+		return lookUp(root,key);
+	}
+	
+	/** Recursive method to find if the key exists.
+	 * @param T - node to start from.
+	 * @param k - key to find.
+	 * @return true if the key exists else false
+	 */
+	private boolean lookUp(TreeNode T, Comparable k){
+		if(T == null){
+			return false;
+		}
+		if(T.getKey().equals(k)){
+			return true;
+		}
+		if(k.compareTo(T.getKey())< 0){
+			return lookUp(T.getLeft(),k);
+		}
+		else{
+			return lookUp(T.getRight(),k);
+		}
+	}
+	
+	
 }
