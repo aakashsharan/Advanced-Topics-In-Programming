@@ -1,4 +1,8 @@
 
+/**
+ * @author Aakash
+ *
+ */
 public class DuplicateException extends Exception {
 
 	public DuplicateException(){
