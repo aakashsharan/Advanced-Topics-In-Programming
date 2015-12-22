@@ -1,4 +1,3 @@
-import java.util.DuplicateFormatFlagsException;
 
 /**
  * @author Aakash
@@ -54,9 +53,9 @@ public class BST {
 	}
 	
 	
-	/**
-	 * @param key
-	 * @return
+	/** Calls the recursive method
+	 * @param key - key to find
+	 * @return - boolean from the recursive lookup method.
 	 */
 	public boolean lookUp(Comparable key){
 		return lookUp(root,key);
@@ -79,6 +78,70 @@ public class BST {
 		}
 		else{
 			return lookUp(T.getRight(),k);
+		}
+	}
+	
+	
+	/** Calls the recursive method
+	 * @param key - key to delete
+	 */
+	public void delete(Comparable key){
+		root = delete(root,key);
+	}
+	
+	
+	
+	/** Removes the node and return the node.
+	 * @param T - TreeNode
+	 * @param k - the key to be deleted
+	 * @return TreeNode
+	 */
+	private TreeNode delete(TreeNode T, Comparable k){
+		
+		if(T == null){
+			return null;
+		}
+		
+		if(k.equals(T.getKey())){
+			if(T.getLeft() == null && T.getRight() == null){
+				return null;
+			}
+			if(T.getLeft() == null){
+				return T.getRight();
+			}
+			if(T.getRight() == null){
+				return T.getLeft();
+			}
+			else{
+				TreeNode smallNode = smallestNode(T.getRight());
+				T.setKey(smallNode.getKey());
+				T.setRight(delete(T.getRight(), smallNode.getKey()));
+				return T;
+			}
+		}
+		
+		else if(k.compareTo(T.getKey()) < 0){
+			T.setLeft(delete(T.getLeft(), k));
+			return T;
+		}
+		
+		else{
+			T.setRight(delete(T.getRight(),k));
+			return T;
+		}
+	}
+
+	
+	/** Method to find the smallest node
+	 * @param T -  a TreeNode
+	 * @return TreeNode
+	 */
+	private TreeNode smallestNode(TreeNode T) {
+		if(T.getLeft() == null){
+			return T;
+		}
+		else{
+			return smallestNode(T.getLeft());
 		}
 	}
 	
