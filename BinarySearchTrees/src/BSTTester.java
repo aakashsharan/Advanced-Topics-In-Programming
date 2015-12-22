@@ -9,28 +9,32 @@ import org.junit.Test;
  */
 public class BSTTester {
 
-	
 	BST bst;
-	
+
 	@Before
-	public void setUp() throws Exception{
+	public void setUp() throws Exception {
 		bst = new BST();
 	}
-	
+
 	@Test
-	public void testInsert() throws DuplicateException{
+	public void testInsert() throws DuplicateException {
 		bst.insert(5);
 		assertEquals("check insert", true, bst.lookUp(5));
-		
-		try{
+
+		try {
 			bst.insert(5);
 			fail("Value already exists");
+		} catch (DuplicateException e) {
+
 		}
-		catch(DuplicateException e){
-			
-		}
-		
+
 	}
 	
-
+	/*@Test
+	public void testDelete() throws DuplicateException{
+		assertEquals("check insert", null, bst.delete(5));
+		bst.insert(10);
+		assertEquals("check insert", 10, bst.delete(10));
+	}
+*/
 }
