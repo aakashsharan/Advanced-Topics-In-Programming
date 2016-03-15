@@ -1,0 +1,7 @@
+lineNo=2, rowNo=2, acountId=123, orderId=o112, creationDate=0, commerceItemId=xci1000037, productId=xprod1046, skuId=xsku1237, qty=2
+lineNo=3, rowNo=3, acountId=124, orderId=o113, creationDate=0, commerceItemId=xci1000038, productId=xprod1047, skuId=xsku1238, qty=6
+lineNo=4, rowNo=4, acountId=125, orderId=o114, creationDate=0, commerceItemId=xci1000039, productId=xprod1048, skuId=xsku1239, qty=2
+lineNo=5, rowNo=5, acountId=126, orderId=o115, creationDate=0, commerceItemId=null, productId=xprod1049, skuId=xsku1240, qty=8
+lineNo=6, rowNo=6, acountId=127, orderId=o116, creationDate=0, commerceItemId=xci1000041, productId=xprod1050, skuId=xsku1241, qty=2
+lineNo=7, rowNo=7, acountId=128, orderId=o117, creationDate=0, commerceItemId=xci1000042, productId=xprod1051, skuId=xsku1242, qty=2
+lineNo=8, rowNo=8, acountId=129, orderId=o118, creationDate=0, commerceItemId=null, productId=xprod1052, skuId=xsku1243, qty=3

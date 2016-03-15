@@ -1,10 +1,11 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Order {
 
 	private int accountId;
 	private String orderId;
-	private Date creationDate;
+	private String creationDate;
 	private String commerceItemId;
 	private String productId;
 	private String skuId;
@@ -26,12 +27,21 @@ public class Order {
 		this.orderId = orderId;
 	}
 
-	public Date getCreationDate() {
+	public String getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(Date creationDate) {
-		this.creationDate = creationDate;
+	public void setCreationDate(String creationDate) {
+		try{
+			String[] dateFormat = creationDate.split("");
+			String formatteDate = dateFormat[0];
+			this.creationDate = formatteDate;
+		}
+		catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
+		
+		
 	}
 
 	public String getCommerceItemId() {
