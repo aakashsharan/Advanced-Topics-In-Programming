@@ -2,28 +2,28 @@ import java.util.Date;
 
 public class Order {
 
-	private int account_id;
-	private String order_id;
+	private int accountId;
+	private String orderId;
 	private Date creationDate;
 	private String commerceItemId;
 	private String productId;
 	private String skuId;
 	private int quantity;
 
-	public int getAccount_id() {
-		return account_id;
+	public int getAccountId() {
+		return accountId;
 	}
 
-	public void setAccount_id(int account_id) {
-		this.account_id = account_id;
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
 	}
 
-	public String getOrder_id() {
-		return order_id;
+	public String getOrderId() {
+		return orderId;
 	}
 
-	public void setOrder_id(String order_id) {
-		this.order_id = order_id;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public Date getCreationDate() {
